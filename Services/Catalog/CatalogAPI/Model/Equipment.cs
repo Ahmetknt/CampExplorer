@@ -15,8 +15,10 @@ namespace CatalogAPI.Model
         public string Picture { get; set; }
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime CreatedTime { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
         public string CategoryId { get; set; }
         [BsonIgnore]
         public Category Category { get; set; }
+
     }
 }

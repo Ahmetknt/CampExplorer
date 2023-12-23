@@ -83,9 +83,9 @@ namespace CatalogAPI.Services
             return Response<EquipmentDto>.Success(_mapper.Map<EquipmentDto>(equipment), 200);
         }
 
-        public async Task<Response<NoContent>> UpdateAsync(EquipmentDto equipmentDto)
+        public async Task<Response<NoContent>> UpdateAsync(EquipmentUpdateDto equipmentUpdateDto)
         {
-            var equipment = _mapper.Map<Equipment>(equipmentDto);
+            var equipment = _mapper.Map<Equipment>(equipmentUpdateDto);
             var updatedEquipment = await _equipmentCollection.FindOneAndReplaceAsync(x => x.Id == equipment.Id, equipment);
             if (updatedEquipment != null)
             {

@@ -8,7 +8,7 @@ namespace CatalogAPI.Services
         Task<Response<List<EquipmentDto>>> GetAllAsync();
         Task<Response<EquipmentDto>> GetAllEquipmentById(string equipmentId);
         Task<Response<NoContent>> CreateAsync(EquipmentCreateDto equipmentCreateDto);
-        Task<Response<NoContent>> UpdateAsync(EquipmentDto equipmentDto);
+        Task<Response<NoContent>> UpdateAsync(EquipmentUpdateDto equipmentUpdateDto);
         Task<Response<NoContent>> DeleteAsync(string equipmentId);
     }
 }

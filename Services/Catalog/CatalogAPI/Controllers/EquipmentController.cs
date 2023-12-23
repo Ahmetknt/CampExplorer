@@ -32,9 +32,9 @@ namespace CatalogAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(EquipmentDto equipmentDto)
+        public async Task<IActionResult> Update(EquipmentUpdateDto equipmentUpdateDto)
         {
-            var response = await _equipmentService.UpdateAsync(equipmentDto);
+            var response = await _equipmentService.UpdateAsync(equipmentUpdateDto);
             return CreateActionResultInstance(response);
         }
 

@@ -11,6 +11,7 @@ namespace CatalogAPI.Mapping
             CreateMap<Category,CategoryDto>().ReverseMap();
             CreateMap<Category, CategoryCreateDto>().ReverseMap();
             CreateMap<Equipment, EquipmentCreateDto>().ReverseMap();
+            CreateMap<Equipment,EquipmentUpdateDto>().ReverseMap();
             CreateMap<Equipment, EquipmentDto>().ReverseMap();
 
         }

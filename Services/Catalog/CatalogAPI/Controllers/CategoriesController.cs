@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Core.ControllerBases;
-
 namespace CatalogAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -13,7 +12,6 @@ namespace CatalogAPI.Controllers
     public class CategoriesController : CustomBaseController
     {
         private readonly ICategoryService _categoryService;
-
         public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
