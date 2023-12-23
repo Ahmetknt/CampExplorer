@@ -23,6 +23,34 @@ namespace CampExplorer.Web.Controllers
         {
             return View();
         }
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterInput registerInput)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = await _identityService.Register(registerInput);
+
+            if (!response.IsSuccessful)
+            {
+                response.Errors.ForEach(x =>
+                {
+                    ModelState.AddModelError(String.Empty, x);
+                });
+
+                return View();
+            }
+
+            return RedirectToAction(nameof(Index), "Home");
+        }
 
         [HttpPost]
         public async Task<IActionResult> SignIn(SigninInput signinInput)

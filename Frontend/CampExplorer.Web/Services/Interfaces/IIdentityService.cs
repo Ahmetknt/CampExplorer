@@ -10,6 +10,7 @@ namespace CampExplorer.Web.Services.Interfaces
 {
     public interface IIdentityService
     {
+        Task<Response<bool>> Register(RegisterInput registerInput);
         Task<Response<bool>> SignIn(SigninInput signinInput);
 
         Task<TokenResponse> GetAccessTokenByRefreshToken();
